@@ -58,7 +58,8 @@
     <script type="text/babel">
 
     const root = document.getElementById('root');
-    const data = [{
+
+    const profileData = [{
       imgSrc: 'https://www.placecage.com/c/100/150',
       name: 'Joel Shinness',
       skills: []
@@ -69,16 +70,22 @@
       alert: "This man's marbles are long gone."
     }];
 
-    const profiles = data.map((profile) => {
-      // YOUR CODE GOES HERE!
-      // Take in a profile object and return some markup
+    const profiles = profileData.map((profile) => {
+      return (
+        <div className="profiles">
+          <div className="profile">
+            {profile.alert && (<p className="alert">{profile.alert}</p>)}
+            <img src={profile.imgSrc}/>
+            <h4> {profile.name} </h4>
+            <ul>
+              {profile.skills.map((skill) => {
+                return (<li>{skill}</li>);
+              })}
+            </ul>
+          </div>
+        </div>);
     });
-
-    const profilesSection = (<div className='profiles'>
-      {profiles}
-    </div>)
-
-    ReactDOM.render(profilesSection, root);
+   ReactDOM.render(profiles, root);
     </script>
   </body>
 </html>

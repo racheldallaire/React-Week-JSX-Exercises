@@ -34,13 +34,44 @@
     </div>
     <script type="text/babel">
 
-    const button = // Create the button onClick handler
-    
-    const form = // Create the form with onSubmit handler
+    const alertFn = () => {
+    alert('Sup homeslice')
+
+    }
+    const button = (
+    <button onClick= {alertFn}>
+      Click to say hi!
+    </button>
+    );
+
+    const onSubmit = (evt) => {
+      evt.preventDefault();
+      const form = evt.target;
+      const nameInput = form.elements.name;
+      const foodInput = form.elements.food;
+
+      alert(`Your name is ${nameInput.value} and you like ${foodInput.value}!`);
+
+      // reset the inputs
+      nameInput.value = foodInput.value = '';
+    }
+    const form = (<form onSubmit={onSubmit}>
+    <div>
+      <input name='name' type='text' placeholder='Name'/>
+    </div>
+    <div>
+      <input name='food' type='text' placeholder='Favourite food'/>
+    </div>
+    <div><input type='submit' value='Submit'/></div>
+  </form>);
 
     const names = ['Joel', 'Don', 'Khurram', 'David', 'Karl', 'Rosy'];
     const listItems = names.map(name => {
-      // Return an li element for each name
+      return (
+        <ul>
+          <li>{name} <button onClick={() => {alert(`Hello, ${name}!`)}}>Greet</button></li>
+        </ul>
+      )
     });
 
     const list = <ul>{listItems}</ul>

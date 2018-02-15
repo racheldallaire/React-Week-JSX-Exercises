@@ -35,10 +35,15 @@
       imgSrc: 'https://www.fillmurray.com/g/100/150',
       name: 'Joel Shinness',
       description: 'Instructor at Lighthouse Labs'
-    };
+    }
+    const markup = (<div className='profile'>
+      <img src={profile.imgSrc}/>
+      <h4>{profile.name}</h4>
+      <p>{profile.description}</p>
+      </div>);
 
     ReactDOM.render(
-      /* Copy the contents of root, and amend it with the data from the profile object */,
+      markup,
       root
     );
 

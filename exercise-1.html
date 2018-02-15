@@ -10,10 +10,14 @@
   <body>
     <div id="banana-sandwich"></div>
     <script type="text/babel">
-      /* 
-      * Find the node with the id "banana-sandwich", 
-      * and render some JSX into it! 
-      **/
+
+       const banana = document.getElementById('banana-sandwich')
+
+        ReactDOM.render(
+        (<h1>Banana!</h1>),
+        banana
+      );
+
     </script>
   </body>
 </html>

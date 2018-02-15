@@ -13,6 +13,10 @@
     #title {
       text-decoration: underline;
     }
+    .strike {
+      text-decoration: line-through
+    }
+
     </style>
   </head>
   <body>
@@ -23,13 +27,13 @@
 
     ReactDOM.render(
       <div>
-        <h1>This is a title</h1>
-        <h2>This is a subtitle</h2>
-        <p>This is some content</p>
+        <h1 idName='title'>This is a title</h1>
+        <h2 className='blue'>This is a subtitle</h2>
+        <p className='strike'>This is some content</p>
       </div>,
       root
     );
-    
+
     </script>
   </body>
 </html>
